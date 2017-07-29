@@ -1,15 +1,10 @@
-
-
-
-
-function firstUnpinnedTab(tabs) {
+ function firstUnpinnedTab(tabs) {
   for (var tab of tabs) {
     if (!tab.pinned) {
       return tab.index;
     }
   }
 }
-
 /**
  * listTabs to switch to
  */
@@ -45,6 +40,28 @@ function getCurrentWindowTabs() {
   return browser.tabs.query({currentWindow: true});
 }
 
+/*SI EL USUARIO PRESIONA ENTER*/
+document.addEventListener("keypress", function(e) {
+
+    if(e.target.id === "WPFunction"){
+           var key = e.keyCode || e.which; 
+            if (key == 13) {
+                  var WPFunction = document.getElementById("WPFunction").value;
+    if (WPFunction == "" || WPFunction == null) {
+        alert("por favor ingrese un término");
+    } else {
+
+        WPFunction = WPFunction.toLowerCase()
+        var WPFunctionURL = "https://developer.wordpress.org/?s=" + WPFunction;
+        browser.tabs.create({ url: WPFunctionURL });
+    }
+            }
+          
+    }
+
+
+});
+
 document.addEventListener("click", function(e) {
   function callOnActiveTab(callback) {
     getCurrentWindowTabs().then((tabs) => {
@@ -54,14 +71,6 @@ document.addEventListener("click", function(e) {
         }
       }
     });
-}
-
-/*SI LA PERSONA PRESIONA ENTER*/
- 
- function wp_search_function(e){
-  alert("entra");
-  tecla = (e.keyCode ? e.keyCode : e.which );
-  if (tecla==13) alert ('Has pulsado enter');
 }
 
 /*EN CASO DE QUE LA PERSONA LE DE AL BOTON DE BUSCAR*/  
@@ -107,12 +116,6 @@ if (e.target.id === "tabs-twitter") {
     var WPURL = "https://twitter.com/wordpressvzla";
     browser.tabs.create({url: WPURL});
 }
-
-
-
-  
-
-
   e.preventDefault();
 });
 
@@ -126,7 +129,6 @@ browser.tabs.onRemoved.addListener(function(tabId, removeInfo){
     console.log(`Its window is not closing`);
   }
 });
-
 //onMoved listener. fired when tab is moved into the same window
 browser.tabs.onMoved.addListener(function(tabId, moveInfo){
   var startIndex = moveInfo.fromIndex;
