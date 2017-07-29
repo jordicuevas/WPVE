@@ -1,0 +1,92 @@
+html, body {
+  width: 350px;
+}
+
+a {
+  margin: 10px;
+  display: inline-block;
+}
+
+.switch-tabs {
+  padding-left: 10px;
+}
+
+.switch-tabs a {
+  display: block;
+}
+
+.panel {
+  margin: 5px;
+}
+
+.texto-desc{
+
+	text-align: center;
+	font-size: 1em;
+}
+.wp-title-texto{
+
+	text-align: center;
+	font-weight: bold;
+
+}
+.contenedor-wp{
+	padding-top: 5px;
+
+	text-align: center;
+}
+
+.text-function
+{
+    width: 60%;
+    text-align: center;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.boton-wp{
+	text-align: center;
+    padding-bottom: 5px;
+
+}
+
+.search{
+ border:0px;
+ 
+ }
+.wp-button{
+   
+	/* width: 40%;
+    height: 20%;
+    text-align: center;
+	*/
+    background-color: #227AA2;
+    padding:5px;
+    color: white;
+    font-weight: bold; 
+    border-radius: 5px,
+}
+
+.wp-image-header{
+	height: 45px;
+	width: 340px;
+}
+body{
+
+}
+.download-wp{
+	background-color: #227AA2;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+.panel a{
+	text-decoration: none;
+	color: #227AA2;
+}
+.download-wp a{
+	text-decoration: none;
+	color: #FFF;
+}
